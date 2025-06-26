@@ -235,5 +235,200 @@ export const toolsData = [
     referralLink: "https://linear.app/",
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop",
     price: "Free - $8/month per user"
+  },
+  {
+    id: 15,
+    title: "Google Pay*",
+    description: "A simple and secure digital payment app by Google for UPI transactions, bill payments, and rewards.",
+    category: "payment",
+    benefits: [
+      "UPI money transfers and QR payments",
+      "Recharge, bill payments, and subscriptions",
+      "Rewards, scratch cards, and cashback offers",
+      "Linked bank accounts with real-time tracking"
+    ],
+    referralLink: "https://g.co/payinvite/d6mo8h",
+    image: "https://images.unsplash.com/photo-1632836142391-5ae89178a92b?w=400&h=300&fit=crop",
+    price: "Free"
+  },
+  {
+    id: 16,
+    title: "PhonePe*",
+    description: "India’s leading digital payments app with UPI, wallet, insurance, and investment options.",
+    category: "payment",
+    benefits: [
+      "Instant UPI and bank transfers",
+      "Gold purchase and mutual funds",
+      "Recharge, bill payments, and donations",
+      "Insurance and digital wallet"
+    ],
+    referralLink: "https://phon.pe/ru_RataT56jH",
+    image: "https://images.unsplash.com/photo-1605902711622-cfb43c4437d3?w=400&h=300&fit=crop",
+    price: "Free"
+  },
+  {
+    id: 17,
+    title: "Mobikwik*",
+    description: "Digital wallet and payment platform offering UPI, credit, BNPL, and utility payments.",
+    category: "payment",
+    benefits: [
+      "Wallet, UPI, and credit line options",
+      "Recharge, bill pay, and shopping offers",
+      "Buy Now Pay Later (BNPL) features",
+      "Credit score tracking and insurance"
+    ],
+    referralLink: "https://sak38.app.goo.gl/TG8eYw7HLtXYd5hH8",
+    image: "https://images.unsplash.com/photo-1612214071595-c0fa5df8e202?w=400&h=300&fit=crop",
+    price: "Free"
+  },
+  {
+    id: 18,
+    title: "Paytm*",
+    description: "A super app for payments, shopping, travel, gaming, and financial services.",
+    category: "payment",
+    benefits: [
+      "UPI, wallet, and card payments",
+      "Bill pay, DTH, and metro recharge",
+      "Loan, mutual funds, and gold savings",
+      "Fastag, insurance, and train bookings"
+    ],
+    referralLink: "https://p.paytm.me/xCTH/ik1ptyb8",
+    image: "https://images.unsplash.com/photo-1580910051074-8f1c7b2bcdcc?w=400&h=300&fit=crop",
+    price: "Free"
+  },
+  {
+    id: 19,
+    title: "Amazon Pay*",
+    description: "Amazon’s payment solution for fast checkouts, recharges, and bill payments with cashback.",
+    category: "payment",
+    benefits: [
+      "One-tap payments on Amazon",
+      "Bill payment, recharge, and insurance",
+      "UPI and wallet integration",
+      "Cashback and partner merchant offers"
+    ],
+    referralLink: "https://amzn.in/d/ce5dGql",
+    image: "https://images.unsplash.com/photo-1611078489935-bc359264d1a7?w=400&h=300&fit=crop",
+    price: "Free"
+  },
+  {
+    id: 20,
+    title: "Airtel Thanks*",
+    description: "Manage Airtel services and payments with additional features like finance, shopping, and entertainment.",
+    category: "payment",
+    benefits: [
+      "Recharge, DTH, broadband, and bill pay",
+      "Airtel UPI and wallet",
+      "Rewards, loans, and FASTag",
+      "Free subscriptions (Wynk, Amazon Prime)"
+    ],
+    referralLink: "",
+    image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=300&fit=crop",
+    price: "Free"
+  },
+  {
+    id: 21,
+    title: "CRED Pay",
+    description: "Pay credit card bills and earn rewards with CRED’s payment system and lifestyle offerings.",
+    category: "payment",
+    benefits: [
+      "Credit card bill payments with cashback",
+      "CRED Coins for exclusive rewards",
+      "CRED Pay checkout at top brands",
+      "Track credit score and usage"
+    ],
+    referralLink: "https://cred.club/",
+    image: "https://images.unsplash.com/photo-1620316018481-6634a3c6656f?w=400&h=300&fit=crop",
+    price: "Free"
+  },
+  {
+    id: 22,
+    title: "Upstox*",
+    description: "Open a Demat account and trade in stocks, IPOs, mutual funds, and F&O with ease.",
+    category: "investment",
+    benefits: [
+      "Free Demat and trading account",
+      "Invest in stocks, mutual funds, and IPOs",
+      "Real-time market analysis tools",
+      "Low brokerage fees"
+    ],
+    referralLink: "https://link.upstox.com/R6MP",
+    image: "https://images.unsplash.com/photo-1569025697913-e1cdd7c9ff6a?w=400&h=300&fit=crop",
+    price: "Free - Based on usage"
+  },
+  {
+    id: 23,
+    title: "Coinswitch*",
+    description: "Buy, sell, and invest in cryptocurrencies like Bitcoin and Ethereum with a user-friendly app.",
+    category: "crypto",
+    benefits: [
+      "Invest in 100+ cryptocurrencies",
+      "No minimum investment amount",
+      "Secure and easy KYC process",
+      "Market insights and portfolio tracking"
+    ],
+    referralLink: "https://coinswitch.co/in/refer?tag=ZHVV",
+    image: "https://images.unsplash.com/photo-1611078489935-bc359264d1a7?w=400&h=300&fit=crop",
+    price: "Free - Transaction fees apply"
+  },
+  {
+    id: 24,
+    title: "Udemy",
+    description: "Access thousands of online courses taught by industry experts across all domains.",
+    category: "education",
+    benefits: [
+      "Lifetime access to purchased courses",
+      "Courses on tech, business, design, and more",
+      "Certifications and quizzes",
+      "Frequent discounts and bundles"
+    ],
+    referralLink: "https://www.udemy.com/",
+    image: "https://images.unsplash.com/photo-1584697964154-6f40ef02d638?w=400&h=300&fit=crop",
+    price: "₹449 - ₹3,999 per course"
+  },
+  {
+    id: 25,
+    title: "Skillshare",
+    description: "Creative learning platform offering classes in design, photography, business, and more.",
+    category: "education",
+    benefits: [
+      "Unlimited access with subscription",
+      "Hands-on projects and community feedback",
+      "Focus on creativity and business skills",
+      "14-day free trial"
+    ],
+    referralLink: "https://www.skillshare.com/",
+    image: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=400&h=300&fit=crop",
+    price: "$32/month or $168/year"
+  },
+  {
+    id: 26,
+    title: "Unacademy",
+    description: "India’s largest learning platform for competitive exams and upskilling courses.",
+    category: "education",
+    benefits: [
+      "Live classes and recorded sessions",
+      "Top educators and structured courses",
+      "Practice quizzes and mock tests",
+      "Courses for UPSC, SSC, NEET, and more"
+    ],
+    referralLink: "https://unacademy.com/",
+    image: "https://images.unsplash.com/photo-1584697964277-05e8f79db479?w=400&h=300&fit=crop",
+    price: "Free - ₹299/month+ for full access"
+  },
+  {
+    id: 27,
+    title: "Lovable",
+    description: "Generate and launch MVPs with AI-powered tools for entrepreneurs and makers.",
+    category: "no-code",
+    benefits: [
+      "AI-generated startup ideas and MVPs",
+      "Auto-build landing pages and waitlists",
+      "Instant business model and persona creation",
+      "Export-ready assets for fast launches"
+    ],
+    referralLink: "https://lovable.dev/?via=ratan-prajapati",
+    image: "https://images.unsplash.com/photo-1611078489935-bc359264d1a7?w=400&h=300&fit=crop",
+    price: "Free - $29/month"
   }
 ];
