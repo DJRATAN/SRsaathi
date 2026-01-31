@@ -17,7 +17,7 @@ export default function ProductivityPage() {
   ]
 
   return (
-    <div className="p-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2" style={{ color: '#97144d' }}>Productivity Tools</h1>
         <p className="text-gray-600">Earn ₹80 - ₹450 per subscription. Share productivity solutions.</p>
