@@ -2,143 +2,180 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Share2, ChevronDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import {
+  Search,
+  Globe,
+  ChevronDown,
+  LayoutGrid,
+  Menu,
+  X,
+  Share2,
+} from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { categories } from "@/lib/categories"
 
-export function Navbar() {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <Image 
-              src="/full_logo.svg" 
-              alt="SRsaathi Logo" 
-              width={150} 
-              height={40}
-              className="h-20 w-auto"
-            />
-          </Link>
+    <div className="w-full font-sans">
+      {/* ================= TOP BAR ================= */}
+      <div className="w-full bg-white border-b border-gray-100 h-[50px] flex items-center justify-between px-6 lg:px-12 relative z-20">
+        {/* Left */}
+        <button className="flex items-center gap-2 px-3 py-1.5 border border-[#043270] rounded text-[#043270] text-sm font-bold hover:bg-[#043270] hover:text-white transition uppercase">
+          <LayoutGrid size={16} />
+          SRsaathi
+        </button>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-1">
-            {categories.map((cat) => (
-              <div key={cat.id} className="relative group">
-                <button className="px-4 py-2 text-sm font-medium hover:text-[#97144d] transition-colors flex items-center gap-1" style={{ color: '#97144d' }}>
-                  {cat.name}
-                  <ChevronDown className="w-4 h-4 opacity-50" />
-                </button>
-
-                {/* Dropdown Menu */}
-                <div className="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="py-2">
-                    {cat.subcategories.map((subcat) => (
-                      <Link
-                        key={subcat.id}
-                        href={subcat.path}
-                        className="block px-4 py-2 text-sm hover:bg-gray-50 transition-colors"
-                        style={{ color: '#97144d' }}
-                      >
-                        {subcat.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
+        {/* Right */}
+        <div className="flex items-center gap-6 text-sm">
+          <div className="flex items-center gap-1 font-semibold">
+            <span>€ 3.598</span>
+            <span className="text-green-600">+0.39%</span>
           </div>
 
-          {/* Right Actions */}
-          <div className="flex items-center gap-2">
-            <Link href="/dashboard">
-              <Button
-                variant="outline"
-                size="sm"
-                className="hidden sm:flex gap-2 border-2 bg-white hover:bg-[#97144d] hover:text-white"
-                style={{ borderColor: '#97144d', color: '#97144d' }}
-              >
-                Dashboard
-              </Button>
-            </Link>
+          <div className="h-4 w-px bg-gray-300" />
 
-            <Link href="/refer-and-earn">
-              <Button size="sm" className="hidden sm:flex gap-2 text-white hover:bg-[#043270]" style={{ backgroundColor: '#97144d' }}>
-                <Share2 className="w-4 h-4" />
-                Refer & Earn
-              </Button>
-            </Link>
+          <button className="flex items-center gap-2 font-semibold hover:text-[#043270]">
+            <Search size={18} className="text-[#043270]" />
+            Search
+          </button>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 hover:bg-muted rounded-lg transition-colors"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+          <div className="h-4 w-px bg-gray-300" />
+
+          <button className="flex items-center gap-1 font-bold hover:text-[#043270]">
+            <Globe size={18} className="text-[#043270]" />
+            EN
+            <ChevronDown size={14} />
+          </button>
+        </div>
+      </div>
+
+      {/* ================= MAIN NAV ================= */}
+      <div className="relative w-full h-[60px] bg-[#97144d] flex items-center justify-between px-6 lg:px-12 text-white z-10">
+
+        {/* -------- LEFT MENU (DESKTOP) -------- */}
+        <nav className="hidden lg:flex items-center gap-8 pl-4">
+          {categories.map((cat) => (
+            <div key={cat.id} className="relative group">
+              <button className="text-[13px] font-extrabold uppercase tracking-wide flex items-center gap-1 hover:text-gray-300">
+                {cat.name}
+                <ChevronDown size={14} />
+              </button>
+
+              {/* Dropdown */}
+              <div className="absolute left-0 top-full mt-2 w-52 bg-white text-[#97144d] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+                {cat.subcategories.map((sub) => (
+                  <Link
+                    key={sub.id}
+                    href={sub.path}
+                    className="block px-4 py-2 text-sm hover:bg-gray-100"
+                  >
+                    {sub.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
+        </nav>
+
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[280px] h-full pointer-events-none flex justify-center">
+          {/* The Custom Curve SVG */}
+          <svg
+            width="280"
+            height="60"
+            viewBox="0 0 280 60"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute top-0"
+          >
+            <path
+              d="M0 0H280V0C280 0 270 0.5 260 10C250 20 240 55 210 55H70C40 55 30 20 20 10C10 0.5 0 0 0 0V0Z"
+              fill="white"
+            />
+          </svg>
+
+          {/* The Logo Text/Icon */}
+          <div className="relative z-20 mb-1 flex items-center justify-center gap-2">
+            <span className="text-[#043270] font-bold text-3xl tracking-tight">
+
+              <Image src={'/full_logo.svg'} alt="" height={80} width={80} />
+            </span>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="lg:hidden border-t border-gray-200 py-4 space-y-2">
-            {categories.map((cat) => (
-              <div key={cat.id}>
-                <button
-                  className="w-full text-left px-3 py-2 text-sm font-medium hover:text-[#97144d] flex items-center justify-between"
-                  style={{ color: '#97144d' }}
-                  onClick={() => setOpenDropdown(openDropdown === cat.id ? null : cat.id)}
-                >
-                  {cat.name}
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${openDropdown === cat.id ? "rotate-180" : ""}`}
-                  />
-                </button>
+        {/* -------- RIGHT ACTIONS -------- */}
+        <div className="flex items-center gap-2 pr-4">
+          <Link href="/dashboard" className="hidden sm:block">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-2 bg-white hover:bg-[#97144d] hover:text-white"
+              style={{ borderColor: "#97144d", color: "#97144d" }}
+            >
+              Dashboard
+            </Button>
+          </Link>
 
-                {/* Mobile Submenu */}
-                {openDropdown === cat.id && (
-                  <div className="pl-4 space-y-1">
-                    {cat.subcategories.map((subcat) => (
-                      <Link
-                        key={subcat.id}
-                        href={subcat.path}
-                        className="block px-3 py-2 text-sm hover:bg-gray-50 rounded-lg transition-colors"
-                        style={{ color: '#97144d' }}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {subcat.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+          <Link href="/refer-and-earn" className="hidden sm:block">
+            <Button
+              size="sm"
+              className="text-white hover:bg-[#043270]"
+              style={{ backgroundColor: "#97144d" }}
+            >
+              <Share2 className="w-4 h-4 mr-1" />
+              Refer & Earn
+            </Button>
+          </Link>
 
-            <div className="pt-4 border-t border-gray-200 space-y-2">
-              <Link href="/dashboard" onClick={() => setIsOpen(false)}>
-                <Button
-                  variant="outline"
-                  className="w-full border-2 bg-white hover:bg-[#97144d] hover:text-white"
-                  style={{ borderColor: '#97144d', color: '#97144d' }}
-                >
-                  Dashboard
-                </Button>
-              </Link>
-              <Link href="/refer-and-earn" onClick={() => setIsOpen(false)}>
-                <Button className="w-full text-white hover:bg-[#043270]" style={{ backgroundColor: '#97144d' }}>
-                  <Share2 className="w-4 h-4 mr-2" />
-                  Refer & Earn
-                </Button>
-              </Link>
-            </div>
-          </div>
-        )}
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden p-2"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
-    </nav>
+
+      {/* ================= MOBILE MENU ================= */}
+      {isOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-2">
+          {categories.map((cat) => (
+            <div key={cat.id}>
+              <button
+                className="w-full flex justify-between items-center text-[#97144d] font-semibold py-2"
+                onClick={() =>
+                  setOpenDropdown(openDropdown === cat.id ? null : cat.id)
+                }
+              >
+                {cat.name}
+                <ChevronDown
+                  className={`transition ${openDropdown === cat.id ? "rotate-180" : ""
+                    }`}
+                />
+              </button>
+
+              {openDropdown === cat.id && (
+                <div className="pl-4">
+                  {cat.subcategories.map((sub) => (
+                    <Link
+                      key={sub.id}
+                      href={sub.path}
+                      className="block py-2 text-sm text-[#97144d]"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {sub.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   )
 }

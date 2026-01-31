@@ -2,10 +2,9 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import WebuildNavbar from "@/components/navbarr"
+import "./globals.css" 
+import { Footer } from "@/components/footer" 
+import Navbar from "@/components/navbar"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,8 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.className} font-sans antialiased`}>
-        <Navbar />
-        <WebuildNavbar />
+        <Navbar /> 
         {children}
         <Analytics />
         <Footer />
