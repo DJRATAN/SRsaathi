@@ -19,10 +19,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <Image 
-              src="/full_logo.svg" 
-              alt="SRsaathi Logo" 
-              width={150} 
+            <Image
+              src="/full_logo.svg"
+              alt="SRsaathi Logo"
+              width={150}
               height={100}
               className="h-30 w-auto"
             />
@@ -31,16 +31,31 @@ export function Footer() {
               {socialLinks.map((social) => {
                 const Icon = social.icon
                 return (
-                  <a
+                  <Link
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full border border-gray-200 hover:bg-[#97144d] hover:text-white hover:border-[#97144d] transition-all"
                     title={social.label}
+                    className="
+          group
+          p-2 rounded-full
+          border border-[#97144d]
+          bg-transparent
+          transition-all duration-200
+          hover:bg-[#043270]
+          hover:border-[#043270]
+        "
                   >
-                    <Icon className="w-5 h-5" style={{ color: '#97144d' }} />
-                  </a>
+                    <Icon
+                      className="
+            w-5 h-5
+            text-[#97144d]
+            transition-colors duration-200
+            group-hover:text-white
+          "
+                    />
+                  </Link>
                 )
               })}
             </div>

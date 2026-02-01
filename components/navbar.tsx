@@ -11,6 +11,7 @@ import {
   Menu,
   X,
   Share2,
+  CircleDashed,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { categories } from "@/lib/categories"
@@ -24,16 +25,18 @@ export default function Navbar() {
       {/* ================= TOP BAR ================= */}
       <div className="w-full bg-white border-b border-gray-100 h-[50px] flex items-center justify-between px-6 lg:px-12 relative z-20">
         {/* Left */}
-        <button className="flex items-center gap-2 px-3 py-1.5 border border-[#043270] rounded text-[#043270] text-sm font-bold hover:bg-[#043270] hover:text-white transition uppercase">
-          <LayoutGrid size={16} />
-          SRsaathi
-        </button>
+        <Link href="/">
+          <button className="flex items-center gap-2 px-3 py-1.5 border border-[#043270] rounded text-[#043270] text-sm font-bold hover:bg-[#043270] hover:text-white transition uppercase">
+            <CircleDashed size={16} />
+            SRsaathi
+          </button>
+        </Link>
 
         {/* Right */}
         <div className="flex items-center gap-6 text-sm">
           <div className="flex items-center gap-1 font-semibold">
             <span>€ 3.598</span>
-            <span className="text-green-600">+0.39%</span>
+            <span className="text-[#97144d]">+0.39%</span>
           </div>
 
           <div className="h-4 w-px bg-gray-300" />
@@ -59,19 +62,36 @@ export default function Navbar() {
         {/* -------- LEFT MENU (DESKTOP) -------- */}
         <nav className="hidden lg:flex items-center gap-8 pl-4">
           {categories.map((cat) => (
-            <div key={cat.id} className="relative group">
-              <button className="text-[13px] font-extrabold uppercase tracking-wide flex items-center gap-1 hover:text-gray-300">
+            <div
+              key={cat.id}
+              className="relative group"
+            >
+              {/* Main Menu */}
+              <button className="text-sm font-extrabold tracking-wide flex items-center gap-1 hover:text-gray-300">
                 {cat.name}
                 <ChevronDown size={14} />
               </button>
 
+              {/* Invisible hover bridge */}
+              <div className="absolute left-0 top-full h-3 w-full"></div>
+
               {/* Dropdown */}
-              <div className="absolute left-0 top-full mt-2 w-52 bg-white text-[#97144d] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+              <div
+                className="
+          absolute left-0 top-8
+          w-52 bg-white text-[#97144d]
+          rounded-lg shadow-lg
+          opacity-0 invisible
+          group-hover:opacity-100 group-hover:visible
+          transition-opacity duration-150
+          z-50
+        "
+              >
                 {cat.subcategories.map((sub) => (
                   <Link
                     key={sub.id}
                     href={sub.path}
-                    className="block px-4 py-2 text-sm hover:bg-gray-100"
+                    className="block px-4 py-2 text-sm rounded-lg hover:bg-gray-100"
                   >
                     {sub.name}
                   </Link>
@@ -101,24 +121,22 @@ export default function Navbar() {
           <div className="relative z-20 mb-1 flex items-center justify-center gap-2">
             <span className="text-[#043270] font-bold text-3xl tracking-tight">
 
-              <Image src={'/full_logo.svg'} alt="" height={80} width={80} />
+              <Link href="/">
+                <Image src={'/full_logo.svg'} alt="SRsaathi Logo" height={80} width={80} />
+              </Link>
             </span>
           </div>
         </div>
 
         {/* -------- RIGHT ACTIONS -------- */}
         <div className="flex items-center gap-2 pr-4">
-          <Link href="/dashboard" className="hidden sm:block">
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-2 bg-white hover:bg-[#97144d] hover:text-white"
-              style={{ borderColor: "#97144d", color: "#97144d" }}
-            >
-              Dashboard
-            </Button>
-          </Link>
-
+ 
+        <Link href="/dashboard">
+          <button className="flex items-center gap-2 px-3 py-1.5 border bg-white border-[#043270] rounded text-[#043270] text-sm font-bold   hover:text-[#97144d] hover:border-[#97144d] transition uppercase">
+            <LayoutGrid size={16} />
+            Dashboard
+          </button>
+        </Link>
           <Link href="/refer-and-earn" className="hidden sm:block">
             <Button
               size="sm"
